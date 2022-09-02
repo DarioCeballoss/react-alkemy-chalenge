@@ -1,28 +1,35 @@
+import axios from 'axios';
+import swAlert from '@sweetalert/with-react';
 
 function Login() {
+
   const submitHandler = e => {
     e.preventDefault();
-    console.log('se envia formulario');
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const regexEmail =/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-    if (email==='' || password==='') {
-      console.log('conpletar los campos');
+    if (email === '' || password === '') {
+      swAlert(<h2>conpletar los campos</h2>);
       return;
     }
 
-    if(email !== '' && !regexEmail.test(email)){
-      console.log('debes escrivir una direccion de correo electronico valida');
+    if (email !== '' && !regexEmail.test(email)) {
+      swAlert(<h2>Debes escrivir una direccion de correo electronico valid</h2>);
       return;
     }
 
-    if(email !== 'challenge@alkemy.org' || password !=='react'){
-      console.log('Credenciales invalidas');
+    if (email !== 'challenge@alkemy.org' || password !== 'react') {
+      swAlert(<h2>Credenciales invalidas</h2>);
       return;
     }
 
-    console.log('OK estamos listos para enviar la informacion ');
+    axios.post('http://challenge-react.alkemy.org', { email, password })
+      .then(res => {
+        swAlert('Iniciaste sesion correctamente');
+        const tokenRecibido = res.data.token;
+        lokalStorage.setItem('token', tokenRecibido);
+      })
   }
 
   return (
