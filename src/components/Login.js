@@ -28,7 +28,7 @@ function Login() {
       .then(res => {
         swAlert('Iniciaste sesion correctamente');
         const tokenRecibido = res.data.token;
-        lokalStorage.setItem('token', tokenRecibido);
+        localStorage.setItem('token', tokenRecibido);
       })
   }
 
