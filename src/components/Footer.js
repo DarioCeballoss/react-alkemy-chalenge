@@ -1,0 +1,15 @@
+import React from 'react';
+
+function Footer() {
+  return (
+    <footer>
+      <nav>
+        <ul>
+          <li><a href='http://instagram.com' rel='noopener norefer'>Instagram</a></li>
+        </ul>
+      </nav>
+    </footer>
+  );
+}
+
+export default Footer;
