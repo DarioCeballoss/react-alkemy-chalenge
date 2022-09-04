@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <Header />
-
       <Routes>
         <Route exact path='/' element={<Login />} />
         <Route path='/listado' element={<Listado />} />

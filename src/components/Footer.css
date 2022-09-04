@@ -1,0 +1,16 @@
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(8, 8, 44);
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+footer>nav>ul>li>a {
+  color: white;
+}

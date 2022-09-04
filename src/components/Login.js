@@ -1,4 +1,5 @@
 import axios from 'axios';
+import './Login.css';
 import swAlert from '@sweetalert/with-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -36,8 +37,8 @@ function Login() {
   }
 
   return (
-    <>
-      <h2>Formulario de Login</h2>
+    <div className='login'>
+      <h2>Inicio de sesion</h2>
       <form onSubmit={submitHandler}>
         <label>
           <br />
@@ -55,7 +56,7 @@ function Login() {
 
         <button type="submit">Ingresar</button>
       </form>
-    </>
+    </div>
   )
 }
 

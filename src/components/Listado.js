@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import './Listado.css'
 import { useNavigate } from 'react-router-dom';
 
 function Listado() {
@@ -14,7 +15,7 @@ function Listado() {
   }, []);
 
   return (
-    <div>
+    <div className='listado'>
       <h1>LISTADO</h1>
     </div>
   );
