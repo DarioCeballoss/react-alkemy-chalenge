@@ -4,8 +4,8 @@ import './Header.css';
 
 function Header() {
   return (
-    <header>
-      <nav>
+    <header className='navbar sticky-top'>
+      <nav >
         <ul>
           <li>
             <Link to='/'>Home</Link>

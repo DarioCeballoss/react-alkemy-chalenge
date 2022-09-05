@@ -1,12 +1,11 @@
-header>nav>ul {
+header{
+  background-color: rgb(8, 8, 44);
+}
+
+header>nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: rgb(8, 8, 44);
-  overflow: hidden;
-  position: fixed;
-  top: 10px;
-  left: 0;
   width: 100%;
 }
 
