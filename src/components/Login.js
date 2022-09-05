@@ -1,9 +1,10 @@
 import axios from 'axios';
 import swAlert from '@sweetalert/with-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import './Login.css';
 function Login() {
   const navigate = useNavigate();
+  let token = localStorage.getItem('token');
 
   const submitHandler = e => {
     e.preventDefault();
@@ -37,6 +38,7 @@ function Login() {
 
   return (
     <div className='login'>
+      {token && <Navigate to='/listado' replace />}
       <h2>Inicio de sesion</h2>
       <form onSubmit={submitHandler}>
         <label>
