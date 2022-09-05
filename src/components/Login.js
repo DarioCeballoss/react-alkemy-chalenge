@@ -1,8 +1,7 @@
 import axios from 'axios';
-import './Login.css';
 import swAlert from '@sweetalert/with-react';
 import { useNavigate } from 'react-router-dom';
-
+import './Login.css';
 function Login() {
   const navigate = useNavigate();
 

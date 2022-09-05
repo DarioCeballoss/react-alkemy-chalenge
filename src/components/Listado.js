@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import './Listado.css'
 import { useNavigate } from 'react-router-dom';
+import './Listado.css';
 
 function Listado() {
   const navigate = useNavigate();
