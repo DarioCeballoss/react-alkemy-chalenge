@@ -14,3 +14,7 @@ ul {
 footer>nav>ul>li>a {
   color: white;
 }
+footer > p {
+  font-size: 10px;
+  color: rgb(59, 60, 105);
+}
