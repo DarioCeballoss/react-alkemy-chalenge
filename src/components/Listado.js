@@ -5,7 +5,7 @@ import swAlert from '@sweetalert/with-react';
 import './Listado.css';
 
 function Listado() {
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
   const [moviesList, setMovieList] = useState([]);
 
 

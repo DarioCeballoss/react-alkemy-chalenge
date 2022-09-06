@@ -4,7 +4,7 @@ import { useNavigate, Navigate } from 'react-router-dom';
 import './Login.css';
 function Login() {
   const navigate = useNavigate();
-  let token = localStorage.getItem('token');
+  let token = sessionStorage.getItem('token');
 
   const submitHandler = e => {
     e.preventDefault();
@@ -31,7 +31,7 @@ function Login() {
       .then(res => {
         swAlert('Iniciaste sesion correctamente');
         const tokenRecibido = res.data.token;
-        localStorage.setItem('token', tokenRecibido);
+        sessionStorage.setItem('token', tokenRecibido);
         navigate("/listado");
       })
   }
