@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Buscador from './Buscador';
 import './Header.css';
 
 function Header() {
@@ -17,7 +18,9 @@ function Header() {
             <Link to='/contacto'>Contacto</Link>
           </li>
         </ul>
+        <Buscador />
       </nav>
+      
     </header>
   );
 }
