@@ -32,7 +32,7 @@ function Listado() {
           return (
             <div className='col-3' key={ind}>
               <div className="card">
-                <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} alt="Card image cap" />
+                <img className="card-img-top" src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} alt="Card cap" />
                 <div className="card-body">
                   <h5 className="card-title">{oneMovie.title}</h5>
                   <p className="card-text">{oneMovie.overview.substring(0,100)}...</p>
