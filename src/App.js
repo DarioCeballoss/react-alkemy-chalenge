@@ -8,6 +8,15 @@ import Resultados from './components/Resultados'
 import './components/bootstrap.min.css';
 
 function App() {
+  const favMovies = localStorage.getItem('favs');
+  let tempMoviesInFavs;
+
+  if (favMovies === null) {
+    tempMoviesInFavs = [];
+  } else {
+    tempMoviesInFavs = JSON.parse(favMovies);
+  }
+
   const addOrRemoveFavs = e => {
     const btn = e.currentTarget;
     const parent = btn.parentElement;
@@ -16,11 +25,27 @@ function App() {
     const overview = parent.querySelector('p').innerText;
     const movieData = {
       imgURL, title, overview,
-      id: btn.dataset.movieID
+      id: btn.dataset.movieId
     }
-
     console.log(movieData);
+
+    let movieInArray = tempMoviesInFavs.find(oneMovie => {
+      return oneMovie.id === movieData.id
+    });
+    console.log(movieInArray);
+    if (!movieInArray) {
+      tempMoviesInFavs.push(movieData);
+      localStorage.setItem('favs', JSON.stringify(tempMoviesInFavs));
+      console.log('se guardó');
+    }else{
+      let moviesLeft = tempMoviesInFavs.filter(oneMovie => {
+        return oneMovie.id !== movieData.id;
+      });
+      localStorage.setItem('favs', JSON.stringify(moviesLeft));
+      console.log('se elimino');
+    }
   }
+
 
   return (
     <div className=''>
