@@ -15,7 +15,7 @@ function Header() {
             <Link to='/listado'>Listado</Link>
           </li>
           <li>
-            <Link to='/contacto'>Contacto</Link>
+            <Link to='/favoritos'>Favoritos</Link>
           </li>
         </ul>
         <Buscador />

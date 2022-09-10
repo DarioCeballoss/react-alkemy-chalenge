@@ -1,23 +1,26 @@
 import { Routes, Route } from 'react-router-dom';
+
 import Login from './components/Login';
 import Listado from './components/Listado';
 import Header from './components/Header'
 import Footer from './components/Footer';
 import Detalle from './components/Detalle';
 import Resultados from './components/Resultados'
+import Favoritos from './components/Favoritos';
+
 import './components/bootstrap.min.css';
 
 function App() {
-  const favMovies = localStorage.getItem('favs');
-  let tempMoviesInFavs;
+const addOrRemoveFavs = e => {
+    const favMovies = localStorage.getItem('favs');
+    let tempMoviesInFavs;
+  
+    if (favMovies === null) {
+      tempMoviesInFavs = [];
+    } else {
+      tempMoviesInFavs = JSON.parse(favMovies);
+    }
 
-  if (favMovies === null) {
-    tempMoviesInFavs = [];
-  } else {
-    tempMoviesInFavs = JSON.parse(favMovies);
-  }
-
-  const addOrRemoveFavs = e => {
     const btn = e.currentTarget;
     const parent = btn.parentElement;
     const imgURL = parent.querySelector('img').getAttribute('src');
@@ -55,6 +58,7 @@ function App() {
         <Route path='/listado' element={<Listado addOrRemoveFavs={addOrRemoveFavs} />} />
         <Route path='/detalle' element={<Detalle />} />
         <Route path='/resultados' element={<Resultados />} />
+        <Route path='/favoritos' element={<Favoritos addOrRemoveFavs={addOrRemoveFavs}/>} />
       </Routes>
 
       <Footer />
