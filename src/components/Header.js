@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Buscador from './Buscador';
 import './Header.css';
 
-function Header() {
+function Header(props) {
   return (
     <header className='navbar sticky-top'>
       <nav >
@@ -16,6 +16,9 @@ function Header() {
           </li>
           <li>
             <Link to='/favoritos'>Favoritos</Link>
+          </li>
+          <li>
+            {props.favorites.length> 0 && <span>favoritos: {props.favorites.length}</span>}
           </li>
         </ul>
         <Buscador />

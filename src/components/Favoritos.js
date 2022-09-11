@@ -1,24 +1,12 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
 function Favoritos(props) {
-  const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
-    const favsInLocal = localStorage.getItem('favs');
-    if (favsInLocal !== null) {
-      const favsArray = JSON.parse(favsInLocal);
-      console.log(favsArray);
-      setFavorites(favsArray);
-
-    }
-    console.log(favsInLocal);
-  }, []);
 
   return (
     <div className='row'>
-      {favorites.map((oneMovie, ind) => {
+      {props.favorites.map((oneMovie, ind) => {
         return (
           <div className='col-3' key={ind}>
             <div className="card">
